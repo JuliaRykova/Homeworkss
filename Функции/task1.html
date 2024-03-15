@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getArrayParams(...arr) {
+            arr.sort();
+            let min = arr[0];
+            let max = arr.at(-1);
+            let avg = [...arr].reduce((a, b) => a + b) / arr.length;
+            let result = {
+                "min": min,
+                "max": max,
+                "avg": Number(avg.toFixed(2)),
+            };
+            return result;
+        }
+        console.log(getArrayParams(-99, 99, 10));
+        console.log(getArrayParams(1, 2, 3, -100, 10)); 
+        console.log(getArrayParams(5));
+    </script>
+
+</body>
+
+</html>
